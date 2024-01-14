@@ -37,7 +37,7 @@ func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface, function string
 	var err error
 
 	if len(args) != 4 {
-		return nil, errors.New("Incorrect number of arguments. Expecting 4")
+		return nil, errors.New("Incorrect number of arguments. Expecting 2")
 	}
 
 	// Initialize the chaincode
@@ -74,12 +74,12 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface, function stri
 		return t.delete(stub, args)
 	}
 
-	var A string             // Entities
-	var requestDomain string // Asset holdings
+	var A string             // owner, args[0]
+	var requestDomain string // domain, args[1]
 	var err error
 
 	if len(args) != 2 {
-		return nil, errors.New("Incorrect number of arguments. Expecting 2")
+		return nil, errors.New("incorrect number of arguments. Expecting 2")
 	}
 
 	A = args[0]

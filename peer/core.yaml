@@ -129,6 +129,8 @@ peer:
     # Validator defines whether this peer is a validating peer or not, and if
     # it is enabled, what consensus plugin to load
     validator:
+
+
         enabled: true
 
         consensus:
